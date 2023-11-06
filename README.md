@@ -35,4 +35,14 @@
 
 /api/v1/users/me/posts
 
+### Messages
+
+/ap1/v1/conversations/
+
+/api/v1/conversations/:conversation_id
+
+/api/v1/conversations/:conversation_id/messages
+
+/api/v1/conversations/:conversation_id/messages/:message_id
+
 
