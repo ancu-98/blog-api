@@ -17,4 +17,21 @@ const checkUserCredential = async (email, password) => {
     }
 }
 
-module.exports = checkUserCredential
+const createRecoveryToken = async (email) => {
+    try {
+        const user = await findUserByEmail(email)
+        const data = await RecoveryPassword.create({
+            id: uuid.v4(),
+            userId : user.id
+        })
+        return data
+    } catch (error) {
+        return error
+    } 
+} 
+
+
+module.exports = {
+    checkUsersCredentials,
+    createRecoveryToken
+}
